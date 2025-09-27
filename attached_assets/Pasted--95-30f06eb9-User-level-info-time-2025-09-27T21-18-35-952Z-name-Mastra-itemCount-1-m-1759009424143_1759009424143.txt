@@ -1,0 +1,124 @@
+.95
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:35.952Z","name":"Mastra","itemCount":1,"msg":"✅ [GetRepositoryContent] Content retrieved successfully"}
+2025-09-27 16:18:36.09
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:36.094Z","name":"Mastra","itemCount":1,"msg":"✅ [GetRepositoryContent] Content retrieved successfully"}
+2025-09-27 16:18:36.10
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:36.100Z","name":"Mastra","msg":"📝 [GetRepositoryContent] Processing content..."}
+2025-09-27 16:18:36.12
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:36.101Z","name":"Mastra","testType":"all","targetFiles":["client/src/pages/Home.tsx"],"coverage":true,"msg":"🔧 [RunCodeTests] Starting test execution"}
+2025-09-27 16:18:36.12
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:36.101Z","name":"Mastra","msg":"📝 [RunCodeTests] Running tests..."}
+2025-09-27 16:18:36.12
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:36.101Z","name":"Mastra","passed":8,"failed":0,"coverage":92,"msg":"✅ [RunCodeTests] Tests completed successfully"}
+2025-09-27 16:18:36.12
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:36.105Z","name":"Mastra","text":"...","toolCallCount":1,"toolResultCount":1,"msg":"📝 [CTOAutomation] Agent step completed"}
+2025-09-27 16:18:36.20
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:36.208Z","name":"Mastra","msg":"📝 [GetRepositoryContent] Processing content..."}
+2025-09-27 16:18:36.21
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:36.217Z","name":"Mastra","itemCount":1,"msg":"✅ [GetRepositoryContent] Content retrieved successfully"}
+2025-09-27 16:18:36.21
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:36.219Z","name":"Mastra","itemCount":46,"msg":"✅ [GetRepositoryContent] Content retrieved successfully"}
+2025-09-27 16:18:36.24
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:36.244Z","name":"Mastra","msg":"📝 [GetRepositoryContent] Processing content..."}
+2025-09-27 16:18:36.44
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:36.441Z","name":"Mastra","itemCount":17,"msg":"✅ [GetRepositoryContent] Content retrieved successfully"}
+2025-09-27 16:18:36.66
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:36.669Z","name":"Mastra","itemCount":73,"msg":"✅ [GetRepositoryContent] Content retrieved successfully"}
+2025-09-27 16:18:36.71
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:36.678Z","name":"Mastra","text":"...","toolCallCount":6,"toolResultCount":6,"msg":"📝 [CTOAutomation] Agent step completed"}
+2025-09-27 16:18:37.94
+30f06eb9
+User
+{"level":"error","time":"2025-09-27T21:18:37.944Z","name":"Mastra","error":"Your input exceeds the context window of this model. Please adjust your input and try again.","msg":"❌ [CTOAutomation] Workflow execution failed"}
+2025-09-27 16:18:41.49
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:41.493Z","name":"Mastra","owner":"uda-eth","repo":"zenquill.ai","title":"fix: center \"Meditate now\" button text on desktop","head":"fix/meditate-now-button-alignment","base":"googleauth","msg":"🔧 [CreatePullRequest] Starting execution"}
+2025-09-27 16:18:41.55
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:41.554Z","name":"Mastra","msg":"📝 [CreatePullRequest] Creating pull request..."}
+2025-09-27 16:18:42.77
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:42.677Z","name":"Mastra","number":61,"msg":"📝 [CreatePullRequest] Pull request created"}
+2025-09-27 16:18:43.27
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:42.678Z","name":"Mastra","msg":"📝 [CreatePullRequest] Requesting reviews..."}
+2025-09-27 16:18:43.75
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:43.751Z","name":"Mastra","msg":"📢 [CTOAutomation] Sending notifications and generating reports"}
+2025-09-27 16:18:43.75
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:43.751Z","name":"Mastra","timestamp":"2025-09-27T21:18:43.751Z","tasksProcessed":0,"pullRequestsCreated":0,"errors":1,"summary":"CTO Automation failed: Your input exceeds the context window of this model. Please adjust your input and try again.","completedTasks":[],"errorDetails":["Workflow execution failed: Your input exceeds the context window of this model. Please adjust your input and try again."],"msg":"📋 [CTOAutomation] Daily Report"}
+2025-09-27 16:18:43.75
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:43.751Z","name":"Mastra","msg":"✅ [CTOAutomation] Notifications and reporting completed"}
+2025-09-27 16:18:43.97
+30f06eb9
+User
+POST /repos/uda-eth/zenquill.ai/pulls/61/requested_reviewers - 422 with id 1A46:50F9B:98AD7BD:21FD860A:68D854B3 in 1025ms
+2025-09-27 16:18:43.97
+30f06eb9
+User
+{"level":"error","time":"2025-09-27T21:18:43.902Z","name":"Mastra","error":"Reviews may only be requested from collaborators. One or more of the users or teams you specified is not a collaborator of the uda-eth/zenquill.ai repository. - https://docs.github.com/rest/pulls/review-requests#request-reviewers-for-a-pull-request","msg":"❌ [CreatePullRequest] Error occurred"}
+2025-09-27 16:18:44.40
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:44.392Z","name":"Mastra","text":"...","toolCallCount":1,"toolResultCount":1,"msg":"📝 [CTOAutomation] Agent step completed"}
+2025-09-27 16:18:54.07
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:53.878Z","name":"Mastra","owner":"uda-eth","repo":"zenquill.ai","title":"fix: center \"Meditate now\" button text on desktop","head":"fix/meditate-now-button-alignment","base":"googleauth","msg":"🔧 [CreatePullRequest] Starting execution"}
+2025-09-27 16:18:54.88
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:54.884Z","name":"Mastra","msg":"📝 [CreatePullRequest] Creating pull request..."}
+2025-09-27 16:18:56.57
+30f06eb9
+User
+POST /repos/uda-eth/zenquill.ai/pulls - 422 with id F276:2BD9E:9968B8F:221C545F:68D854C0 in 1693ms
+2025-09-27 16:18:56.67
+30f06eb9
+User
+{"level":"error","time":"2025-09-27T21:18:56.578Z","name":"Mastra","error":"Validation Failed: {\"resource\":\"PullRequest\",\"code\":\"custom\",\"message\":\"A pull request already exists for uda-eth:fix/meditate-now-button-alignment.\"} - https://docs.github.com/rest/pulls/pulls#create-a-pull-request","msg":"❌ [CreatePullRequest] Error occurred"}
+2025-09-27 16:19:02.07
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:18:57.577Z","name":"Mastra","text":"...","toolCallCount":1,"toolResultCount":1,"msg":"📝 [CTOAutomation] Agent step completed"}
+2025-09-27 16:19:07.27
+30f06eb9
+User
+{"level":"info","time":"2025-09-27T21:19:07.278Z","name":"Mastra","pageId":"27b41774-a1aa-81c1-a48b-d3541d3a68f6","comment":"Opened a fix on branch fix/meditate-now-button-alignment to center the \"Meditate now\" button text on desktop by switching to inline-flex and enforcing items-center/justify-center. A PR already exists for this branch. Please review and merge when convenient.","msg":"🔧 [AddTaskComment] Starting execution"}
