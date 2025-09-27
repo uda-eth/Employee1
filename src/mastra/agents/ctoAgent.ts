@@ -25,6 +25,13 @@ import {
 } from "../tools/developmentTools";
 
 // Use Replit AI Gateway for LLM access (no API key required)
+// Debug: Log environment variable availability
+console.log("🔑 Environment check:", { 
+  hasOpenAIKey: !!process.env.OPENAI_API_KEY,
+  hasNotionDB: !!process.env.NOTION_DATABASE_ID,
+  isProduction: process.env.REPLIT_DEPLOYMENT === '1'
+});
+
 const openai = createOpenAI({
   baseURL: process.env.OPENAI_BASE_URL || undefined,
   apiKey: process.env.OPENAI_API_KEY || undefined,
