@@ -5,7 +5,7 @@ import { z } from "zod";
 const taskDiscoveryStep = createStep({
   id: "task-discovery-step",
   description: "Discover and process new tasks from Notion kanban board",
-  inputSchema: z.object({}), // Empty input schema for time-based trigger
+  inputSchema: z.object({}) as any, // Empty object schema for time-based trigger - type assertion to fix generic constraint
   outputSchema: z.object({
     tasksProcessed: z.number(),
     completedTasks: z.array(z.string()),
@@ -186,7 +186,7 @@ const notificationStep = createStep({
 export const ctoAutomationWorkflow = createWorkflow({
   id: "cto-automation-workflow",
   description: "Autonomous CTO workflow that continuously monitors Notion kanban boards, completes development tasks, and creates production-ready pull requests",
-  inputSchema: z.object({}), // Empty input schema since this is triggered by cron
+  inputSchema: z.object({}) as any, // Empty object schema since this is triggered by cron - type assertion to fix generic constraint
   outputSchema: z.object({
     workflowExecuted: z.boolean(),
     tasksProcessed: z.number(),
