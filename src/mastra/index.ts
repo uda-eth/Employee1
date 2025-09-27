@@ -8,7 +8,30 @@ import { NonRetriableError } from "inngest";
 import { z } from "zod";
 
 import { sharedPostgresStorage } from "./storage";
-import { inngest, inngestServe } from "./inngest";
+import { inngest, inngestServe, registerCronWorkflow } from "./inngest";
+import { ctoAgent } from "./agents/ctoAgent";
+import { ctoAutomationWorkflow } from "./workflows/ctoAutomationWorkflow";
+
+// Import all tools for MCP server
+import { 
+  readKanbanBoardTool, 
+  updateTaskStatusTool, 
+  addTaskCommentTool, 
+  queryTaskDetailsTool 
+} from "./tools/notionTools";
+import { 
+  createBranchTool, 
+  commitCodeTool, 
+  createPullRequestTool, 
+  getRepositoryContentTool, 
+  listRepositoryBranchesTool 
+} from "./tools/githubTools";
+import { 
+  analyzeCodebaseTool, 
+  implementCodeChangesTool, 
+  runCodeTestsTool, 
+  validateCodeQualityTool 
+} from "./tools/developmentTools";
 
 class ProductionPinoLogger extends MastraLogger {
   protected logger: pino.Logger;
@@ -53,13 +76,30 @@ class ProductionPinoLogger extends MastraLogger {
 
 export const mastra = new Mastra({
   storage: sharedPostgresStorage,
-  agents: {},
-  workflows: {},
+  agents: { ctoAgent },
+  workflows: { ctoAutomationWorkflow },
   mcpServers: {
     allTools: new MCPServer({
-      name: "allTools",
+      name: "allTools", 
       version: "1.0.0",
-      tools: {},
+      tools: {
+        // Notion tools
+        readKanbanBoardTool,
+        updateTaskStatusTool,
+        addTaskCommentTool,
+        queryTaskDetailsTool,
+        // GitHub tools
+        createBranchTool,
+        commitCodeTool,
+        createPullRequestTool,
+        getRepositoryContentTool,
+        listRepositoryBranchesTool,
+        // Development tools
+        analyzeCodebaseTool,
+        implementCodeChangesTool,
+        runCodeTestsTool,
+        validateCodeQualityTool
+      },
     }),
   },
   bundler: {
@@ -135,6 +175,13 @@ export const mastra = new Mastra({
           level: "info",
         }),
 });
+
+// Register the CTO automation workflow to run every 15 minutes
+// Use environment variables for timezone and cron expression with defaults
+registerCronWorkflow(
+  `TZ=${process.env.SCHEDULE_CRON_TIMEZONE || 'America/Los_Angeles'} ${process.env.SCHEDULE_CRON_EXPRESSION || '*/15 * * * *'}`, 
+  ctoAutomationWorkflow
+);
 
 /*  Sanity check 1: Throw an error if there are more than 1 workflows.  */
 // !!!!!! Do not remove this check. !!!!!!
