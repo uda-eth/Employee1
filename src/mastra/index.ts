@@ -176,13 +176,13 @@ export const mastra = new Mastra({
         }),
 });
 
-// TEMPORARILY DISABLED: Cron job disabled to prevent destructive commits while fixing implementation tool
+// RE-ENABLED: Cron job re-enabled after successful safety testing - agent now works correctly without destructive behavior
 // Register the CTO automation workflow to run every 15 minutes
 // Use environment variables for timezone and cron expression with defaults
-// registerCronWorkflow(
-//   `TZ=${process.env.SCHEDULE_CRON_TIMEZONE || 'America/Los_Angeles'} ${process.env.SCHEDULE_CRON_EXPRESSION || '*/15 * * * *'}`, 
-//   ctoAutomationWorkflow
-// );
+registerCronWorkflow(
+  `TZ=${process.env.SCHEDULE_CRON_TIMEZONE || 'America/Los_Angeles'} ${process.env.SCHEDULE_CRON_EXPRESSION || '*/15 * * * *'}`, 
+  ctoAutomationWorkflow
+);
 
 /*  Sanity check 1: Throw an error if there are more than 1 workflows.  */
 // !!!!!! Do not remove this check. !!!!!!
