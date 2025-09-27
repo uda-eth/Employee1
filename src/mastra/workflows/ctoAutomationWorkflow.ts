@@ -44,20 +44,24 @@ Follow your instructions to:
    - databaseId: "${process.env.NOTION_DATABASE_ID || '[SET_NOTION_DATABASE_ID]'}"
    - statusFilter: "To Do"
 
-2. For each new task found:
+2. **IMPORTANT: Process ONLY ONE task per execution run to avoid context overflows**
+   
+   For the FIRST task found (ignore others for now):
    - Use queryTaskDetails to get full requirements
-   - Move task to 'In Progress' using updateTaskStatus
+   - Move task to 'In Progress' using updateTaskStatus  
    - Use GitHub tools with owner: "${process.env.GITHUB_OWNER || '[SET_GITHUB_OWNER]'}" and repo: "${process.env.GITHUB_REPO || '[SET_GITHUB_REPO]'}"
    - Follow your complete development workflow (lay-of-land → build → code review)
    - Create pull request and update task status to 'Done'
    - Add completion comment with PR link
 
-Be autonomous and comprehensive. Process all available tasks following your established workflow. Return a summary of what you accomplished.`
+**CRITICAL: Stop after completing ONE task. Do not attempt to process multiple tasks in a single run.**
+
+Return a summary of the ONE task you completed.`
         }
       ], {
         resourceId: "cto-automation",
         threadId: `cto-session-${new Date().toISOString()}`,
-        maxSteps: 50, // Allow extensive tool usage for autonomous operation
+        maxSteps: 20, // Reduced from 50 to prevent context overflows - focus on ONE task
         onStepFinish: ({ text, toolCalls, toolResults }) => {
           logger?.info('📝 [CTOAutomation] Agent step completed', { 
             text: text?.substring(0, 200) + '...',

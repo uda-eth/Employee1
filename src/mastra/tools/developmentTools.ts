@@ -168,43 +168,43 @@ export const implementCodeChangesTool = createTool({
         ] : []
       };
       
-      // Generate template code changes
-      const codeChanges = [
-        {
-          filePath: "components/NewFeature.tsx",
-          content: `import React from 'react';
-import { useNewFeature } from '../hooks/useNewFeature';
-import type { NewFeatureProps } from '../types/newFeature';
-
-export const NewFeature: React.FC<NewFeatureProps> = ({ ...props }) => {
-  const { state, actions } = useNewFeature(props);
-  
-  return (
-    <div className="new-feature">
-      {/* Implementation follows ZenQuill patterns */}
-      <h2 className="text-xl font-semibold mb-4">
-        {/* Feature content */}
-      </h2>
-    </div>
-  );
-};`,
-          changeType: "new" as const,
-          description: "New feature component following ZenQuill patterns"
-        }
-      ];
+      // CRITICAL FIX: Generate actual implementation plans, not placeholder code
+      // This tool now returns implementation guidance instead of destructive placeholder code
+      const codeChanges = [];
       
-      if (targetFiles) {
+      // Add implementation guidance for specific task requirements
+      if (targetFiles && targetFiles.length > 0) {
         targetFiles.forEach(file => {
           codeChanges.push({
             filePath: file,
-            content: `// Modified ${file}\n// Implementation would go here following existing patterns`,
-            changeType: "new" as const,
-            description: `Updated ${file} according to requirements`
+            content: `IMPLEMENTATION_PLAN_FOR_${file.replace(/[^a-zA-Z0-9]/g, '_')}`,
+            changeType: "modified" as const,
+            description: `Requires targeted modification of ${file} - use getRepositoryContent to read current file and create surgical edits`
           });
+        });
+      } else {
+        // Generic implementation guidance
+        codeChanges.push({
+          filePath: "IMPLEMENTATION_REQUIRED",
+          content: "DETAILED_ANALYSIS_AND_SURGICAL_EDITS_NEEDED",
+          changeType: "modified" as const,
+          description: "This task requires careful analysis of existing codebase and surgical modifications - avoid wholesale file replacement"
         });
       }
       
-      logger?.info('✅ [ImplementCodeChanges] Implementation plan created successfully');
+      // SAFETY CHECK: Never return destructive placeholder code
+      const hasPlaceholders = codeChanges.some(change => 
+        change.content.toLowerCase().includes('implementation would go here') ||
+        change.content.toLowerCase().includes('todo') ||
+        change.content.toLowerCase().includes('placeholder')
+      );
+      
+      if (hasPlaceholders) {
+        logger?.error('❌ [ImplementCodeChanges] Blocked destructive placeholder generation');
+        throw new Error('Implementation tool blocked: Cannot generate placeholder code that would destroy existing implementations');
+      }
+      
+      logger?.info('✅ [ImplementCodeChanges] Safe implementation plan created - requires detailed codebase analysis');
       
       return {
         implementationPlan,
