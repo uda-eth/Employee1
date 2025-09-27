@@ -1,0 +1,132 @@
+025-09-27 00:52:33.86
+ffd3c429
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-09-27 00:52:37.55
+ffd3c429
+User
+{"level":"warn","time":"2025-09-27T05:52:37.550Z","name":"Mastra","msg":"If you are using a custom instrumentation file or want to disable this warning, set the globalThis.___MASTRA_TELEMETRY___ variable to true in your instrumentation file."}
+2025-09-27 00:52:37.69
+ffd3c429
+User
+{"level":"info","time":"2025-09-27T05:52:37.695Z","name":"Mastra","msg":" Mastra API running on port http://0.0.0.0:5000/api"}
+2025-09-27 01:19:55.55
+ffd3c429
+System
+system: received signal terminated
+2025-09-27 01:48:20.50
+ffd3c429
+System
+starting up user application
+2025-09-27 01:48:20.61
+ffd3c429
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-09-27 01:48:24.03
+ffd3c429
+User
+{"level":"warn","time":"2025-09-27T06:48:24.030Z","name":"Mastra","msg":"If you are using a custom instrumentation file or want to disable this warning, set the globalThis.___MASTRA_TELEMETRY___ variable to true in your instrumentation file."}
+2025-09-27 01:48:24.18
+ffd3c429
+User
+{"level":"info","time":"2025-09-27T06:48:24.187Z","name":"Mastra","msg":" Mastra API running on port http://0.0.0.0:5000/api"}
+2025-09-27 02:15:05.56
+ffd3c429
+System
+system: received signal terminated
+2025-09-27 03:00:07.06
+ffd3c429
+User
+{"level":"info","time":"2025-09-27T08:00:07.068Z","name":"Mastra","msg":"🚀 [CTOAutomation] Starting autonomous CTO workflow execution"}
+2025-09-27 03:00:07.09
+ffd3c429
+User
+{"level":"info","time":"2025-09-27T08:00:07.069Z","name":"Mastra","msg":"🤖 [CTOAutomation] CTO Agent loaded successfully"}
+2025-09-27 03:00:07.09
+ffd3c429
+User
+{"level":"warn","time":"2025-09-27T08:00:07.069Z","name":"Mastra","msg":"Deprecation NOTICE:\nGenerate method will switch to use generateVNext implementation September 23rd, 2025. Please use generateLegacy if you don't want to upgrade just yet."}
+2025-09-27 03:00:07.15
+ffd3c429
+User
+{"level":"error","time":"2025-09-27T08:00:07.155Z","name":"Mastra","error":"OpenAI API key is missing. Pass it using the 'apiKey' parameter or the OPENAI_API_KEY environment variable.","msg":"❌ [CTOAutomation] Workflow execution failed"}
+2025-09-27 03:00:09.47
+ffd3c429
+User
+{"level":"info","time":"2025-09-27T08:00:09.470Z","name":"Mastra","msg":"📢 [CTOAutomation] Sending notifications and generating reports"}
+2025-09-27 03:00:09.48
+ffd3c429
+User
+{"level":"info","time":"2025-09-27T08:00:09.471Z","name":"Mastra","timestamp":"2025-09-27T08:00:09.471Z","tasksProcessed":0,"pullRequestsCreated":0,"errors":1,"summary":"CTO Automation failed: OpenAI API key is missing. Pass it using the 'apiKey' parameter or the OPENAI_API_KEY environment variable.","completedTasks":[],"errorDetails":["Workflow execution failed: OpenAI API key is missing. Pass it using the 'apiKey' parameter or the OPENAI_API_KEY environment variable."],"msg":"📋 [CTOAutomation] Daily Report"}
+2025-09-27 03:00:09.48
+ffd3c429
+User
+{"level":"info","time":"2025-09-27T08:00:09.471Z","name":"Mastra","msg":"✅ [CTOAutomation] Notifications and reporting completed"}
+2025-09-27 03:15:25.57
+ffd3c429
+System
+system: received signal terminated
+2025-09-27 03:55:05.63
+ffd3c429
+System
+starting up user application
+2025-09-27 03:55:05.77
+ffd3c429
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-09-27 03:55:09.21
+ffd3c429
+User
+{"level":"warn","time":"2025-09-27T08:55:09.211Z","name":"Mastra","msg":"If you are using a custom instrumentation file or want to disable this warning, set the globalThis.___MASTRA_TELEMETRY___ variable to true in your instrumentation file."}
+2025-09-27 03:55:09.35
+ffd3c429
+User
+{"level":"info","time":"2025-09-27T08:55:09.354Z","name":"Mastra","msg":" Mastra API running on port http://0.0.0.0:5000/api"}
+2025-09-27 04:28:13.46
+ffd3c429
+System
+starting up user application
+2025-09-27 04:28:13.62
+ffd3c429
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-09-27 04:28:16.21
+ffd3c429
+User
+{"level":"warn","time":"2025-09-27T09:28:16.213Z","name":"Mastra","msg":"If you are using a custom instrumentation file or want to disable this warning, set the globalThis.___MASTRA_TELEMETRY___ variable to true in your instrumentation file."}
+2025-09-27 04:28:16.35
+ffd3c429
+User
+{"level":"info","time":"2025-09-27T09:28:16.350Z","name":"Mastra","msg":" Mastra API running on port http://0.0.0.0:5000/api"}
+2025-09-27 04:43:25.58
+ffd3c429
+System
+system: received signal terminated
+2025-09-27 05:28:02.05
+ffd3c429
+System
+starting up user application
+2025-09-27 05:28:02.22
+ffd3c429
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
+2025-09-27 05:28:06.03
+ffd3c429
+User
+{"level":"warn","time":"2025-09-27T10:28:06.036Z","name":"Mastra","msg":"If you are using a custom instrumentation file or want to disable this warning, set the globalThis.___MASTRA_TELEMETRY___ variable to true in your instrumentation file."}
+2025-09-27 05:28:06.19
+ffd3c429
+User
+{"level":"info","time":"2025-09-27T10:28:06.191Z","name":"Mastra","msg":" Mastra API running on port http://0.0.0.0:5000/api"}
+2025-09-27 05:45:15.58
+ffd3c429
+System
+system: received signal terminated
+2025-09-27 06:20:49.91
+ffd3c429
+System
+starting up user application
+2025-09-27 06:20:50.07
+ffd3c429
+System
+forwarding local port 5000 to external port 80 (mapped as 1104)
