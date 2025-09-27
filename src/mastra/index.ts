@@ -177,10 +177,10 @@ export const mastra = new Mastra({
 });
 
 // RE-ENABLED: Cron job re-enabled after successful safety testing - agent now works correctly without destructive behavior
-// Register the CTO automation workflow to run every 15 minutes
+// Register the CTO automation workflow to run once every hour
 // Use environment variables for timezone and cron expression with defaults
 registerCronWorkflow(
-  `TZ=${process.env.SCHEDULE_CRON_TIMEZONE || 'America/Los_Angeles'} ${process.env.SCHEDULE_CRON_EXPRESSION || '*/15 * * * *'}`, 
+  `TZ=${process.env.SCHEDULE_CRON_TIMEZONE || 'America/Los_Angeles'} ${process.env.SCHEDULE_CRON_EXPRESSION || '0 * * * *'}`, 
   ctoAutomationWorkflow
 );
 
