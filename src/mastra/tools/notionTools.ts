@@ -96,7 +96,16 @@ export const readKanbanBoardTool = createTool({
         };
       }
       
-      const response = await (notion as any).databases.query(queryParams);
+      const searchParams: any = {
+        filter: {
+          value: 'page',
+          property: 'object'
+        },
+        page_size: 100
+      };
+      
+      // For database-specific filtering, we'll filter results after the search
+      const response = await notion.search(searchParams);
       
       logger?.info('📝 [ReadKanbanBoard] Processing results', { count: response.results.length });
       
