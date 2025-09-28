@@ -86,8 +86,8 @@ export const analyzeCodebaseTool = createTool({
 });
 
 export const implementCodeChangesTool = createTool({
-  id: "implement-code-changes",
-  description: "Analyze tasks and provide detailed implementation guidance without generating destructive placeholder code",
+  id: "implement-code-changes", 
+  description: "Implement actual code changes by analyzing tasks and generating real code based on existing patterns",
   inputSchema: z.object({
     taskDescription: z.string().describe("Description of the feature or fix to implement"),
     requirements: z.string().describe("Detailed requirements and acceptance criteria"),
@@ -98,47 +98,29 @@ export const implementCodeChangesTool = createTool({
     testRequirements: z.boolean().default(true).describe("Whether to include test implementation")
   }),
   outputSchema: z.object({
-    analysis: z.object({
+    implementationResult: z.object({
       taskType: z.string(),
-      scope: z.array(z.string()),
-      dependencies: z.array(z.string()),
-      risks: z.array(z.string()),
-      estimatedEffort: z.string()
-    }),
-    implementationStrategy: z.object({
-      approach: z.string(),
-      phases: z.array(z.object({
-        name: z.string(),
-        description: z.string(),
-        deliverables: z.array(z.string()),
-        estimatedTime: z.string()
+      filesModified: z.array(z.object({
+        path: z.string(),
+        action: z.enum(["created", "modified", "deleted"]),
+        content: z.string(),
+        description: z.string()
       })),
-      criticalConsiderations: z.array(z.string())
-    }),
-    detailedPlan: z.object({
-      preparationSteps: z.array(z.string()),
-      implementationSteps: z.array(z.object({
-        step: z.string(),
-        description: z.string(),
-        files: z.array(z.string()),
-        commands: z.array(z.string()).optional(),
-        validationCriteria: z.array(z.string())
+      codeChanges: z.array(z.object({
+        file: z.string(),
+        changeDescription: z.string(),
+        linesAdded: z.number(),
+        linesModified: z.number()
       })),
-      integrationSteps: z.array(z.string()),
-      testingStrategy: z.array(z.string())
+      status: z.enum(["completed", "partial", "failed"]),
+      summary: z.string()
     }),
-    safetyChecks: z.object({
-      backupRecommendations: z.array(z.string()),
-      rollbackPlan: z.array(z.string()),
-      monitoringPoints: z.array(z.string()),
-      breakGlass: z.array(z.string())
+    qualityAssurance: z.object({
+      safeguards: z.array(z.string()),
+      codeReviewPoints: z.array(z.string()),
+      testingRecommendations: z.array(z.string())
     }),
-    nextActions: z.array(z.object({
-      action: z.string(),
-      description: z.string(),
-      priority: z.enum(["immediate", "next", "later"]),
-      assignee: z.enum(["developer", "reviewer", "qa", "automation"])
-    }))
+    nextSteps: z.array(z.string())
   }),
   execute: async ({ context, mastra }) => {
     const logger = mastra?.getLogger();
